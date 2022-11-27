@@ -1,0 +1,6 @@
+ansible-playbook -i ./inventory/prod.yml site.yml
+ansible-galaxy role init vector-role
+ansible-galaxy install -r requirements.yml
+ansible-galaxy install -r requirements.yml -p roles
+
+systemctl status vector

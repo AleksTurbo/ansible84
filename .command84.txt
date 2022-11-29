@@ -4,3 +4,7 @@ ansible-galaxy install -r requirements.yml
 ansible-galaxy install -r requirements.yml -p roles
 
 systemctl status vector
+systemctl status nginx
+systemctl status clickhouse-server
+
+ansible-galaxy role init lighthouse-role

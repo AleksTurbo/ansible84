@@ -3,19 +3,19 @@ dependency:
   name: galaxy
 driver:
   name: docker
-  options:
-    D: true
-    vv: true
+  # options:
+  #   D: true
+  #   vv: true
 
-lint: |
-  yamllint .
-  ansible-lint
-  flake8
+# lint: |
+#   yamllint .
+#   ansible-lint
+#   flake8
 platforms:
   - name: centos_7
     image: centos:7
     dockerfile: ../resources/Dockerfile.j2
-    # pre_build_image: true
+    pre_build_image: true
     command: /usr/sbin/init
     privileged: true
     capabilities:
@@ -44,5 +44,5 @@ provisioner:
     converge: ../resources/playbooks/converge.yml
 verifier:
   name: ansible
-  playbooks:
-    verify: ../resources/tests/verify.yml
+  # playbooks:
+  #   verify: ../resources/tests/verify.yml

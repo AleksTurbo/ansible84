@@ -3,9 +3,9 @@ dependency:
   name: galaxy
 driver:
   name: docker
-  # options:
-  #   D: true
-  #   vv: true
+  options:
+    D: true
+    vv: true
 
 lint: |
   yamllint .
@@ -44,5 +44,5 @@ provisioner:
     converge: ../resources/playbooks/converge.yml
 verifier:
   name: ansible
-  # playbooks:
-  #   verify: ../resources/tests/verify.yml
+  playbooks:
+    verify: ../resources/tests/verify.yml
